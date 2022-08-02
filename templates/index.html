@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Your Story Begins...
+{% endblock %}
+
+{% block body %} 
+
+    <h2>Welcome to you personalized collection webpage! Here you can add new items,
+        delete the ones you don't want, or just stare lovingly at your collection in
+        a way that is definitely not creepy! Have fun!!</h2>
+
+    <a href='{{ url_for("index") }}'><button id="randomize">RANDOMIZE !</button></a>
+    <div id="index_book"></div>
+        <div id="book_details">
+            <p>{{itemToShow[1]}}</p>
+            <p>{{itemToShow[2]}}</p>
+            <p>{{itemToShow[3]}}</p>
+        </div>
+        <div id="book_cover">
+            <img src ='{{ url_for("static", filename="images/" + itemToShow[0] )}}' alt="book cover">
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Add Item!
+{% endblock %}
+
+{% block body %} 
+    <h2>{{headline}}
+        {% if name!=null %}
+            , {{name}}!</h2>
+        {% else %} 
+            </h2>
+        {% endif %}
+
+    <form id = "form" action="{{ url_for('additem') }}" method="POST" enctype="multipart/form-data">
+
+        <label id="item_picture_label" class="labels" for="item_picture">Book Cover Image:</label>
+            <input type="file" id="item_picture" name="item_picture" accept=".png, .jfif, .jpg, .jpeg" multiple required>
+            <br><span id="image_span" class="span"></span>
+        <br>
+        <br>
+        <label id="item_title_label" class="labels" for="title">Book Title:</label>
+            <input type="text" id="title" name="title" placeholder="Enter Book Title" required>
+            <br><span class="span"></span>
+        <br>
+        <br>
+        <label id="item_author_label" class="labels" for="author">Book Author:</label>
+            <input type="text" id="author" name="author" placeholder="Enter Book Author" required>
+            <br><span class="span"></span>
+        <br>
+        <br>
+        <label id="item_series_label" class="labels" for="series">Book Series:</label>
+            <input type="text" id="series" name="series" placeholder="Enter Book Series" required>
+            <br><span class="span"></span>
+        <br>
+        <br>
+        <input type="submit" id="addItemSubmit" value="Submit">
+
+    </form>
+
+{% endblock %}

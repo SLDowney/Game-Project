@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+    Display!
+{% endblock %}
+
+{% block body %} 
+    <h2>{{ headline }}</h2>
+
+{% for inf in info %}
+    <div class="row">
+        <table  style="width: 100%;">
+            <colgroup>
+                <col span="1" style="width: 30%;">
+                <col span="2" style="width: 70%;">
+             </colgroup>
+            <tbody>
+            <tr>
+                <th>Stat</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{inf["char_name"]}}</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>{{inf["char_type"]}}</td>
+            </tr>
+            <tr>
+                <td>Health</td>
+                <td>{{inf["char_health"]}}</td>
+            </tr>
+            <tr>
+                <td>Attack</td>
+                <td>{{inf["char_attack"]}}</td>
+            </tr>
+            <tr>
+                <td>Defense</td>
+                <td>{{inf["char_Defense"]}}</td>
+            </tr>
+            <tr>
+                <td>Magic</td>
+                <td>{{inf["char_magic"]}}</td>
+            </tr>
+        </tbody>
+            </table>
+        <!-- <p>Name: {{inf["char_name"]}}</p>
+        <p>Type: {{inf["char_type"]}}</p>
+        <p>Health: {{inf["char_health"]}}</p>
+        <p>Attack: {{inf["char_attack"]}}</p>
+        <p>Defense: {{inf["char_Defense"]}}</p>
+        <p>Magic: {{inf["char_magic"]}}</p> -->
+        <br>
+    </div>
+
+{% endfor %}
+    
+{% endblock %}
